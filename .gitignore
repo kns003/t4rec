@@ -1,2 +1,3 @@
 *.pyc
+travel/travel/*.pyc
 *.swp

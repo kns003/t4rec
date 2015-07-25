@@ -10,13 +10,10 @@ google_places = GooglePlaces(YOUR_API_KEY)
 # Gets points of interest for a given location.
 def get_poi(lat, lon, hour, minute, traits):
 	# Get type of locations you would want to have.
-	print (lat)
-	print lon
 	query_types = TypeFetcher.fetch_type(hour, minute, traits)
 	print(len(query_types))
 	for query_type in query_types:
 		places = get_nearby_result(query_type[0], lat, lon, [query_type[1]])
-		print(places)
 		if len(places) > 0:
 			return json.dumps(places, default=Place.to_json)
 		else:
@@ -41,5 +38,5 @@ def get_nearby_result(query, lat, lon, result_types):
 		places.append(place)
 	return places
 
-get_poi(12.9667, 77.5667, 13, 0, [])
-get_poi(12.9667, 77.5667, 0, 10, [])
+#print get_poi(12.9667, 77.5667, 13, 0, [])
+#get_poi(12.9667, 77.5667, 0, 10, [])

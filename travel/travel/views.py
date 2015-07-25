@@ -14,14 +14,12 @@ def home(request):
 
 def get_suggestions(request):
 	print("get_suggestions")
-	lat = request.GET['lat']
-	lon = request.GET['lon']
-	hour = request.GET['hour']
-	minute = request.GET['minute']
-	print(hour,minute)
+	lat = float(request.GET['lat'])
+	lon = float(request.GET['lon'])
+	hour = int(request.GET['hour'])
+	minute = int(request.GET['minute'])
 	traits = []
 	response = get_poi(lat, lon, hour, minute, traits)
-	print ("res" , 	response)
 	return HttpResponse(response)
 
 	
