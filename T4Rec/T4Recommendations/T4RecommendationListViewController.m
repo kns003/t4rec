@@ -58,20 +58,13 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-  self.view.tintColor = [UIColor whiteColor];
-  self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
-  self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+  [self setNavigationBarStyle];
   self.operationQueue = [[NSOperationQueue alloc]init];
   self.dataStore = [[T4DataStore alloc]init];
   [self startStandardUpdates];
   [self reloadRecommendations];
  
-  self.items = [NSMutableArray arrayWithCapacity:20];
-  for (int i = 0; i < 20; i++)
-  {
-    [self.items addObject:[NSString stringWithFormat:@"Item %d", i]];
-  }
+
   
   UIImageView *dropOnToDeleteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trashcan"] highlightedImage:[UIImage imageNamed:@"trashcan_red"]];
   dropOnToDeleteView.center = CGPointMake(50, 300);
@@ -79,6 +72,15 @@
   
   UIImageView *dragUpToDeleteConfirmView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trashcan"] highlightedImage:[UIImage imageNamed:@"trashcan_red"]];
   self.collectionView.dragUpToDeleteConfirmView = dragUpToDeleteConfirmView;
+}
+
+-(void)setNavigationBarStyle
+{
+  [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+  self.view.tintColor = [UIColor whiteColor];
+  self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
+  self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutOfApp)];
 }
 
 #pragma mark - UICollectionViewDatasource
@@ -98,8 +100,9 @@
   {
     cell.contentView.backgroundColor = UIColorFromRGB(kOddCellBGColor);
   }
+  T4Recommendation *recommendationInfo = self.items[indexPath.item];
   
-  cell.titleLabel.text = self.items[indexPath.item];
+  cell.titleLabel.text = recommendationInfo.name;
   return cell;
 }
 
@@ -208,7 +211,13 @@
   [self.view showActivityViewWithLabel:@"Loading"];
   
 }
-
+-(void)logoutOfApp
+{
+  
+  FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+  [login logOut];
+  [self.navigationController popToRootViewControllerAnimated:YES];
+}
 #pragma mark DownLoadDelegate
 #pragma mark
 - (void)downloadOperationWillComplete:(T4DownloadOperation * __nonnull)operation type:(T4WebAPIType)type
@@ -250,8 +259,10 @@
 
 - (void)importOperationCompleted:(T4DataImportOperation * __nonnull)operation importOperationType:(T4WebAPIType)importOperationType
 {
-  
-  //self.items = []
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:NSStringFromClass([T4Recommendation class])];
+  NSError *errorObject = nil;
+  NSArray *listOfRecommendations = [dataStore.mainManagedObjectContext executeFetchRequest:fetchRequest error:&errorObject];
+  self.items = listOfRecommendations;
   [self.collectionView reloadData];
 }
 - (void)importOperationCancelled:(T4DataImportOperation * __nonnull)operation importOperationType:(T4WebAPIType)importOperationType

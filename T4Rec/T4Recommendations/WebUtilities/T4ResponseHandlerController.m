@@ -10,6 +10,7 @@
 #import "T4Rec-Swift.h"
 #import "T4WebResponse.h"
 
+#define SERVER_DEPLOYMENT_NOT_COMPLETE
 @interface T4ResponseHandlerController ()
 @property(nonatomic,copy) T4WebServiceCompletionBlock completionBlock;
 @property(nonatomic)  T4WebAPIType requestType;
@@ -61,9 +62,15 @@
     if(data.length > 0)
     {
       NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-      NSLog(@"string %@",string);
       
-
+      
+#ifdef SERVER_DEPLOYMENT_NOT_COMPLETE
+       NSString* fileName = [[NSBundle mainBundle] pathForResource:@"Recommendation" ofType:@"txt"];
+        NSString* fileContents = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:NULL];
+      string = fileContents;
+      NSLog(@"string %@",string);
+#endif
+      
       NSArray *JSONList =
       [NSJSONSerialization JSONObjectWithData: [string dataUsingEncoding:NSUTF8StringEncoding]
                                       options: NSJSONReadingMutableContainers
