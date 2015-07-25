@@ -3,10 +3,10 @@ import operator
 
 # with open('personality_json_py.txt') as f:
 #     watson_data = f.read()
-#     personality_type(watson_data)
 
 def personality_type(watson_data):
 	watson_data = json.loads(watson_data)
+	print watson_data
 	#Documentarian
 	#3. 1.Artistic Interests
 	#print watson_data['tree']['children'][0]['children'][0]['children'][0]['children'][1]['id']
@@ -114,5 +114,5 @@ def personality_type(watson_data):
 	sorted_personality_dict = sorted(personality_dict.items(), key=operator.itemgetter(1), reverse=True)
 	for x in sorted_personality_dict:
 	    print x[0]
-#with open('personality.txt', 'w') as f:
-#   f.write(sorted_personality_dict.join(','))
+	#with open('personality.txt', 'w') as f:
+	#   f.write(sorted_personality_dict.join(','))

@@ -6,4 +6,5 @@ class TravelUser(models.Model):
 	name = models.CharField(max_length = 100, blank=True, null=True)
 	access_token = models.CharField(max_length=2000,blank=True, null=True)
 	likes_result = models. CharField(max_length=9999,blank=True,null=True)
+	watson_data = models.TextField(blank=True,null=True)
 	

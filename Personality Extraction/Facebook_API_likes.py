@@ -6,7 +6,7 @@ likes = []
 token = 'CAACEdEose0cBABlMPvluxIx9JIxKTafsnwZACr4VjFwgsR6kQGiHbrsZAsy7Ve59X95Ik6B5HK8gIGGFXtYBr6IZCswyPHVnneb9snQs1JsbrZAN5ZAhte3zSSZBbcrHMuYYR7wNvXMiqte72IbN5SK7HFuZBMVJusyfMZAv7QrccLZBZBauBmpBVJewWPplaQPtJ52aibRWeWfAZANidnypxSZB'
 graph =  facebook.GraphAPI(access_token=token)#, version='2.4')
 profile = graph.get_object("me")
-#likes.append(profile['quotes'].encode('utf8'))
+likes.append(profile['quotes'].encode('utf8'))
 def likes_gather(str, args):
     profile = graph.get_object('me', **args)
     # print profile
