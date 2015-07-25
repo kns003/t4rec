@@ -246,13 +246,16 @@
   if (response.responseType == SuccessWithData)
   {
     [self.operationQueue addOperation:importOperation];
+      [self.view hideActivityView];
+     [self.view showActivityViewWithLabel:@"Parsing Data"];
   }
-  [self.view hideActivityView];
+
 }
 - (void)downloadOperationCancelled:(NSOperation * __nonnull)operation type:(T4WebAPIType)type
 {
   [self.view hideActivityView];
 }
+
 
 #pragma mark
 #pragma mark
@@ -263,15 +266,17 @@
   NSError *errorObject = nil;
   NSArray *listOfRecommendations = [dataStore.mainManagedObjectContext executeFetchRequest:fetchRequest error:&errorObject];
   self.items = listOfRecommendations;
+  [self.view hideActivityView];
   [self.collectionView reloadData];
+
 }
 - (void)importOperationCancelled:(T4DataImportOperation * __nonnull)operation importOperationType:(T4WebAPIType)importOperationType
 {
-  
+    [self.view hideActivityView];
 }
 - (void)importOperationFailed:(T4DataImportOperation * __nonnull)operation importOperationType:(T4WebAPIType)importOperationType withError:(NSError * __nonnull)withError
 {
-  
+    [self.view hideActivityView];
 }
 #pragma mark Location-Updates
 #pragma mark
