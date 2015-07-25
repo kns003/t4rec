@@ -15,12 +15,13 @@ def home(request):
 
 def get_suggestions(request):
 	print("get_suggestions")
-	access_token = request.COOKIES.get('access_token')
+	
 	lat = float(request.GET['lat'])
 	lon = float(request.GET['lon'])
 	hour = int(request.GET['hour'])
 	minute = int(request.GET['minute'])
 	user_id = request.GET['user_id']
+	access_token = request.GET.get('access_token')
 	get_info_users(user_id, access_token)
 	traits = []
 	response = get_poi(lat, lon, hour, minute, traits)
