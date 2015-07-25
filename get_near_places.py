@@ -29,8 +29,15 @@ def get_nearby_result(query, lat, lon, result_types):
 		radius=20000, types=result_types)
 
 	places = []
-	for g_place in query_result.places:
+	length = min(query_result.places, 2)
+
+	for g_place in query_result.places[:length]:
 		place = Place(g_place.geo_location, g_place.name, g_place.place_id)
+		g_place.get_details()
+		place.set_detail(g_place.website)
+		for photo in g_place.photos:
+			photo.get(maxheight=500, maxwidth=500)
+			place.add_image(photo.url)
 		places.append(place)
 	return places
 		# Returned places from a query are place summaries.

@@ -11,7 +11,7 @@ class Place:
 		self.detail = detail
 
 	def add_image(self, image_url):
-		self.image.append(image_url)
+		self.images.append(image_url)
 
 	@staticmethod
 	def to_json(obj):
