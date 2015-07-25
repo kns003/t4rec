@@ -103,6 +103,7 @@
   T4Recommendation *recommendationInfo = self.items[indexPath.item];
   
   cell.titleLabel.text = recommendationInfo.name;
+  cell.detailsLabel.text = recommendationInfo.details;
   return cell;
 }
 
