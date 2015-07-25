@@ -13,7 +13,7 @@ import os
 import dj_database_url
 from os.path import join
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-DATABASES['default'] =  dj_database_url.config()
+
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Quick-start development settings - unsuitable for production
@@ -106,6 +106,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] =  dj_database_url.config()
 
 TEMPLATE_DIRS = (
     join(BASE_DIR,  'travel/templates/'),
