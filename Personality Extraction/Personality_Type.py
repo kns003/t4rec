@@ -1,7 +1,7 @@
 import json
 import operator
 
-with open('personality_json.txt') as f:
+with open('personality_json_py.txt') as f:
     watson_data = f.read()
 
 watson_data = json.loads(watson_data)
