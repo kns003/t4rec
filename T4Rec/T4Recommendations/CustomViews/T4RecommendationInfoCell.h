@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "T4Constants.h"
 
 @interface T4RecommendationInfoCell : UICollectionViewCell
 

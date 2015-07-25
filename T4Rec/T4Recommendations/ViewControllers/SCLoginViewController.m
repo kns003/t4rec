@@ -56,6 +56,10 @@
 {
   
     [super viewDidLoad];
+   self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
+  self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+
+  self.view.backgroundColor = UIColorFromRGB(kBackgroundColor);
   SCSettings *settings = [SCSettings defaultSettings];
   settings.shouldSkipLogin = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observeProfileChange:) name:FBSDKProfileDidChangeNotification object:nil];

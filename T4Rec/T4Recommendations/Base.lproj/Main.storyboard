@@ -75,7 +75,7 @@
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="hyI-S5-lKn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.21097995920000001" green="0.21097995920000001" blue="0.21097995920000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="ywK-l4-3J3" customClass="MTDraggableCardLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pass" id="5IW-fn-hGR" customClass="T4RecommendationInfoCell">
@@ -142,6 +142,7 @@
                                 </constraints>
                                 <size key="customSize" width="398" height="236"/>
                                 <connections>
+                                    <outlet property="detailsLabel" destination="BkN-4I-QOm" id="lzO-Q2-yxf"/>
                                     <outlet property="distanceLabel" destination="v6i-ha-jN7" id="m4T-wt-eDp"/>
                                     <outlet property="doneButton" destination="nkf-oN-rB7" id="5M9-Zx-hfn"/>
                                     <outlet property="infoButton" destination="wJZ-4z-ecU" id="HSO-i6-Sg7"/>

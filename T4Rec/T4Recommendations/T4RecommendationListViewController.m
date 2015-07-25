@@ -58,6 +58,10 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+  self.view.tintColor = [UIColor whiteColor];
+  self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
+  self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
   self.operationQueue = [[NSOperationQueue alloc]init];
   self.dataStore = [[T4DataStore alloc]init];
   [self startStandardUpdates];
@@ -87,6 +91,13 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
   T4RecommendationInfoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"pass" forIndexPath:indexPath];
+  if (indexPath.row %2 == 0) {
+    cell.contentView.backgroundColor = UIColorFromRGB(kEvenCellBGColor);
+  }
+  else
+  {
+    cell.contentView.backgroundColor = UIColorFromRGB(kOddCellBGColor);
+  }
   
   cell.titleLabel.text = self.items[indexPath.item];
   return cell;
