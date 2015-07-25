@@ -22,6 +22,8 @@
   [FBSDKLoginButton class];
   NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults] ;
   [standardUserDefaults setObject:@"http://t4rec.com:8000" forKey:kBaseIPURL];
+
+  [self.window setTintColor:[UIColor whiteColor]];
   // Override point for customization after application launch.
   return YES;
 }

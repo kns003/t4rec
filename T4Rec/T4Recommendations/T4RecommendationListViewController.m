@@ -23,21 +23,24 @@
 #import "T4Rec-Swift.h"
 #import "T4WebResponse.h"
 #import "UIView+RNActivityView.h"
+#import <CoreLocation/CoreLocation.h>
 
+@interface T4RecommendationListViewController ()< UICollectionViewDataSource_Draggable,T4DownloadOperationDelegate,T4DataImportStatusDelegate,CLLocationManagerDelegate>
 
-@interface T4RecommendationListViewController ()< UICollectionViewDataSource_Draggable,T4DownloadOperationDelegate,T4DataImportStatusDelegate>
-
+@property(nonatomic,strong)CLLocationManager *locationManager;
 @property(nonatomic,strong)NSOperationQueue *operationQueue;
 @property (nonatomic, strong) NSMutableArray * items;
 @property(nonatomic,strong)T4DataImportOperation *importOperation;
 @property(nonatomic,strong)T4DownloadOperation *downLoadOperation;
 @property(nonatomic,strong)T4DataStore *dataStore;
+@property(nonatomic,strong) CLLocation* lastLocation;
 
 @end
 
 @implementation T4RecommendationListViewController
 @synthesize importOperation,downLoadOperation,dataStore;
-
+@synthesize locationManager;
+@synthesize lastLocation;
 #pragma mark Status Bar color
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -55,14 +58,13 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  [self setNavigationBarStyle];
   self.operationQueue = [[NSOperationQueue alloc]init];
   self.dataStore = [[T4DataStore alloc]init];
+  [self startStandardUpdates];
   [self reloadRecommendations];
-  self.items = [NSMutableArray arrayWithCapacity:20];
-  for (int i = 0; i < 20; i++)
-  {
-    [self.items addObject:[NSString stringWithFormat:@"Item %d", i]];
-  }
+ 
+
   
   UIImageView *dropOnToDeleteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trashcan"] highlightedImage:[UIImage imageNamed:@"trashcan_red"]];
   dropOnToDeleteView.center = CGPointMake(50, 300);
@@ -70,6 +72,15 @@
   
   UIImageView *dragUpToDeleteConfirmView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"trashcan"] highlightedImage:[UIImage imageNamed:@"trashcan_red"]];
   self.collectionView.dragUpToDeleteConfirmView = dragUpToDeleteConfirmView;
+}
+
+-(void)setNavigationBarStyle
+{
+  [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+  self.view.tintColor = [UIColor whiteColor];
+  self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
+  self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutOfApp)];
 }
 
 #pragma mark - UICollectionViewDatasource
@@ -82,8 +93,16 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
   T4RecommendationInfoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"pass" forIndexPath:indexPath];
+  if (indexPath.row %2 == 0) {
+    cell.contentView.backgroundColor = UIColorFromRGB(kEvenCellBGColor);
+  }
+  else
+  {
+    cell.contentView.backgroundColor = UIColorFromRGB(kOddCellBGColor);
+  }
+  T4Recommendation *recommendationInfo = self.items[indexPath.item];
   
-  cell.titleLabel.text = self.items[indexPath.item];
+  cell.titleLabel.text = recommendationInfo.name;
   return cell;
 }
 
@@ -172,8 +191,12 @@
 
   
   T4APIRequestInfo *requestInfo = [[T4APIRequestInfo alloc]init];
-  requestInfo.latitude= @"12.9667";
-  requestInfo.longitude= @"77.5667";
+  requestInfo.latitude= [[NSString alloc]initWithFormat:@"%.5f",lastLocation.coordinate.latitude];
+  requestInfo.longitude= [[NSString alloc]initWithFormat:@"%.5f",lastLocation.coordinate.longitude];
+  if (([requestInfo.latitude integerValue]) == 0 && (requestInfo.longitude.integerValue) == 0) {
+    requestInfo.latitude = [@12.9667 stringValue];
+    requestInfo.longitude = [@77.5667 stringValue];
+  }
   NSDate *today = [NSDate date];
   NSCalendar *gregorian = [[NSCalendar alloc]
                            initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -188,7 +211,13 @@
   [self.view showActivityViewWithLabel:@"Loading"];
   
 }
-
+-(void)logoutOfApp
+{
+  
+  FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+  [login logOut];
+  [self.navigationController popToRootViewControllerAnimated:YES];
+}
 #pragma mark DownLoadDelegate
 #pragma mark
 - (void)downloadOperationWillComplete:(T4DownloadOperation * __nonnull)operation type:(T4WebAPIType)type
@@ -230,7 +259,10 @@
 
 - (void)importOperationCompleted:(T4DataImportOperation * __nonnull)operation importOperationType:(T4WebAPIType)importOperationType
 {
-  
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:NSStringFromClass([T4Recommendation class])];
+  NSError *errorObject = nil;
+  NSArray *listOfRecommendations = [dataStore.mainManagedObjectContext executeFetchRequest:fetchRequest error:&errorObject];
+  self.items = listOfRecommendations;
   [self.collectionView reloadData];
 }
 - (void)importOperationCancelled:(T4DataImportOperation * __nonnull)operation importOperationType:(T4WebAPIType)importOperationType
@@ -240,6 +272,42 @@
 - (void)importOperationFailed:(T4DataImportOperation * __nonnull)operation importOperationType:(T4WebAPIType)importOperationType withError:(NSError * __nonnull)withError
 {
   
+}
+#pragma mark Location-Updates
+#pragma mark
+- (void)startStandardUpdates
+{
+  // Create the location manager if this object does not
+  // already have one.
+  if (nil == locationManager)
+    locationManager = [[CLLocationManager alloc] init];
+  
+  locationManager.delegate = self;
+  locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+  
+  // Set a movement threshold for new events.
+  //locationManager.distanceFilter = 500; // meters
+  
+  [locationManager startUpdatingLocation];
+}
+
+#pragma mark Location-Delegate
+#pragma mark
+// Delegate method from the CLLocationManagerDelegate protocol.
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+  // If it's a relatively recent event, turn off updates to save power.
+  self.lastLocation = [locations lastObject];
+  NSDate* eventDate = lastLocation.timestamp;
+  NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+  if (abs(howRecent) < 15.0) {
+    // If the event is recent, do something with it.
+    NSLog(@"latitude %+.6f, longitude %+.6f\n",
+          lastLocation.coordinate.latitude,
+          lastLocation.coordinate.longitude);
+    
+  }
+   [self reloadRecommendations];
 }
 
 @end

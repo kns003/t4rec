@@ -8,6 +8,12 @@
 
 @implementation T4RecommendationInfoCell
 
+-(void)awakeFromNib
+{
+  [super awakeFromNib];
+  self.backgroundColor = [UIColor clearColor];
+  // self.contentView.backgroundColor = [UIColorFromRGB(kCellBGColor) colorWithAlphaComponent:1];
+}
 - (void)layoutSubviews
 {
 	[super layoutSubviews];

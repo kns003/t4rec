@@ -62,7 +62,7 @@ static const int ImportBatchSize = 10;
   BOOL isAscending = YES;
   NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[T4Recommendation uniqueKeyInServerJSON]  ascending:isAscending];
   self.jsonList = [self.jsonList sortedArrayUsingDescriptors:@[descriptor]];
-  NSArray *listOfItems = [self.jsonList valueForKey:[T4Recommendation uniqueKeyInServerJSON]];
+  NSArray *listOfItems = [jsonList valueForKey:[T4Recommendation uniqueKeyInServerJSON]];
   
   // Create the fetch request to get all Employees matching the IDs.
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -88,15 +88,31 @@ static const int ImportBatchSize = 10;
     NSDictionary *dictionaryDetails = [weakSelf.jsonList objectAtIndex:idx];
     [itemToUpdate updateRecommendationDic:dictionaryDetails intoContext:self.context];
     
-    if (idx % progressGranularity == 0) {
-      self.progressCallback(idx / (float) count);
-    }
+    
     if (idx % ImportBatchSize == 0) {
       [self.context save:NULL];
     }
   }];
+  
+  if (recommendationsMatchingIDs.count < self.jsonList.count) {
+    
+    NSUInteger beginIndex = recommendationsMatchingIDs.count-1 ;
+    
+    if (recommendationsMatchingIDs.count <= 0) {
+      beginIndex = 0;
+    }
+    
+    for (NSUInteger index = beginIndex ; index < self.jsonList.count ; index++) {
+      
+      NSDictionary *yetToCreateRecomDic = [self.jsonList objectAtIndex:index];
+      [T4Recommendation importRecommendationDic:yetToCreateRecomDic intoContext:self.context] ;
+      
+    }
+    
+  }
 
-  self.progressCallback(1);
+
+  //self.progressCallback(1);
   [self.context save:NULL];
   [statusDelegate importOperationCompleted:self importOperationType:requestType];
 }

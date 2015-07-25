@@ -45,6 +45,8 @@
 		246BDE8B1B63DFAF009623F1 /* T4DataImportStatusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE8A1B63DFAF009623F1 /* T4DataImportStatusDelegate.swift */; };
 		246BDE921B63F80D009623F1 /* RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE8F1B63F80D009623F1 /* RNActivityView.m */; };
 		246BDE931B63F80D009623F1 /* UIView+RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE911B63F80D009623F1 /* UIView+RNActivityView.m */; };
+		246BDE961B640390009623F1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE941B640390009623F1 /* FBSDKCoreKit.framework */; };
+		246BDE971B640390009623F1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE951B640390009623F1 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		246BDE8F1B63F80D009623F1 /* RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityView.m; sourceTree = "<group>"; };
 		246BDE901B63F80D009623F1 /* UIView+RNActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RNActivityView.h"; sourceTree = "<group>"; };
 		246BDE911B63F80D009623F1 /* UIView+RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RNActivityView.m"; sourceTree = "<group>"; };
+		246BDE941B640390009623F1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "T4Recommendations/External-Libraries/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		246BDE951B640390009623F1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "T4Recommendations/External-Libraries/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				246BDE961B640390009623F1 /* FBSDKCoreKit.framework in Frameworks */,
+				246BDE971B640390009623F1 /* FBSDKLoginKit.framework in Frameworks */,
 				246BDE861B63B6E9009623F1 /* CoreLocation.framework in Frameworks */,
 				246BDE6F1B639BAA009623F1 /* CoreData.framework in Frameworks */,
 				246BDE2F1B63721E009623F1 /* FBSDKCoreKit.framework in Frameworks */,
@@ -155,6 +161,8 @@
 		246BDDF71B636375009623F1 = {
 			isa = PBXGroup;
 			children = (
+				246BDE941B640390009623F1 /* FBSDKCoreKit.framework */,
+				246BDE951B640390009623F1 /* FBSDKLoginKit.framework */,
 				246BDE851B63B6E9009623F1 /* CoreLocation.framework */,
 				246BDE6E1B639BAA009623F1 /* CoreData.framework */,
 				246BDE2E1B63721E009623F1 /* FBSDKCoreKit.framework */,
@@ -632,6 +640,7 @@
 					playing,
 					with,
 					SDK/Hackathon/FacebookSDK,
+					"$(PROJECT_DIR)/T4Recommendations/External-Libraries",
 				);
 				INFOPLIST_FILE = T4Recommendations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -654,6 +663,7 @@
 					playing,
 					with,
 					SDK/Hackathon/FacebookSDK,
+					"$(PROJECT_DIR)/T4Recommendations/External-Libraries",
 				);
 				INFOPLIST_FILE = T4Recommendations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -715,6 +725,7 @@
 				246BDE281B636375009623F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		246BDE291B636375009623F1 /* Build configuration list for PBXNativeTarget "T4RecTests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +734,7 @@
 				246BDE2B1B636375009623F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
