@@ -1,1 +1,2 @@
 python-google-places==1.0.0
+enum34
