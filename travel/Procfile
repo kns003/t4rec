@@ -1,1 +1,1 @@
-web: gunicorn travel.wsgi --log-file -
+web : gunicorn travel.wsgi -b 0.0.0.0:$PORT
