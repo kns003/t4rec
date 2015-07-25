@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E9F35B09-6277-497E-AF54-7C1BEEA5D0E8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>T4Rec</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8555CFC52EC2C513FDB7158A3D0D2CFA4EB111E8</key>
+		<string>https://github.com/kns003/t4rec.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>T4Rec/T4Rec.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8555CFC52EC2C513FDB7158A3D0D2CFA4EB111E8</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kns003/t4rec.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8555CFC52EC2C513FDB7158A3D0D2CFA4EB111E8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8555CFC52EC2C513FDB7158A3D0D2CFA4EB111E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>t4rec</string>
+		</dict>
+	</array>
+</dict>
+</plist>
