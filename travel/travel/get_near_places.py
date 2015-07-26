@@ -15,7 +15,7 @@ def get_poi(lat, lon, hour, minute, traits):
 	for query_type in query_types:
 		places = get_nearby_result(query_type[0], lat, lon, [query_type[1]])
 		if len(places) > 0:
-			return json.dumps(places, default=Place.to_json)
+			return json.dumps(places, default=Place.to_json).replace('\\', '')
 		else:
 			print "No results found"
 
