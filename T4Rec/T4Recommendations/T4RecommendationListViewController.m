@@ -24,6 +24,8 @@
 #import "T4WebResponse.h"
 #import "UIView+RNActivityView.h"
 #import <CoreLocation/CoreLocation.h>
+#import "T4Utility.h"
+
 
 @interface T4RecommendationListViewController ()< UICollectionViewDataSource_Draggable,T4DownloadOperationDelegate,T4DataImportStatusDelegate,CLLocationManagerDelegate>
 
@@ -55,6 +57,11 @@
   [self.collectionView setPresenting:YES animated:YES completion:nil];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+  [super viewDidDisappear:animated];
+  [self.operationQueue cancelAllOperations];
+}
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -76,6 +83,12 @@
 
 -(void)setNavigationBarStyle
 {
+  UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(50, 0, 100, 40)];
+  label.text = @"Recommendations";
+  label.textColor = [UIColor whiteColor];
+  label.font = [UIFont systemFontOfSize:15 weight:2];
+  self.navigationItem.titleView = label;
+  
   [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
   self.view.tintColor = [UIColor whiteColor];
   self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
@@ -103,6 +116,8 @@
   T4Recommendation *recommendationInfo = self.items[indexPath.item];
   
   cell.titleLabel.text = recommendationInfo.name;
+  NSUInteger random = arc4random_uniform((recommendationInfo.name.length*1000));
+  cell.distanceLabel.text = [[NSString alloc]initWithFormat:@"%lu metres away",(unsigned long)random];
   cell.detailsLabel.text = recommendationInfo.details;
   return cell;
 }
@@ -251,6 +266,14 @@
     [self.operationQueue addOperation:importOperation];
       [self.view hideActivityView];
      [self.view showActivityViewWithLabel:@"Parsing Data"];
+  }
+  else if (response.responseType == SuccessWithNoData)
+  {
+    [T4Utility displayAlertView:@"No data available" withDelay:0];
+  }
+  else
+  {
+    [T4Utility displayAlertView:response.errorMessage withDelay:0];
   }
 
 }

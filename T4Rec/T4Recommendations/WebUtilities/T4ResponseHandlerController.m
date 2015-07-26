@@ -66,8 +66,8 @@
       
 #ifdef SERVER_DEPLOYMENT_NOT_COMPLETE
        NSString* fileName = [[NSBundle mainBundle] pathForResource:@"Recommendation" ofType:@"txt"];
-      NSString* fileContents = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:NULL];
-      string = fileContents;
+      //NSString* fileContents = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:NULL];
+      // string = fileContents;
       NSLog(@"string %@",string);
 #endif
       
@@ -75,6 +75,14 @@
       [NSJSONSerialization JSONObjectWithData: [string dataUsingEncoding:NSUTF8StringEncoding]
                                       options: NSJSONReadingMutableContainers
                                         error: &error];
+      
+      NSLog(@"Error  %@",[error userInfo]);
+
+      //NSData *jsonData = [NSJSONSerialization dataWithJSONObject:JSONList options:0 error:&error];
+      
+      //JSONList =  [NSJSONSerialization JSONObjectWithData: jsonData
+      // options: NSJSONReadingMutableContainers
+      //  error: &error];
       
       if ([JSONList  isKindOfClass:[NSArray class]]) {
         
@@ -101,6 +109,15 @@
           
         }
         
+      }
+      else if(error != nil)
+      {
+        T4WebResponse *serviceResponse = [[T4WebResponse alloc]init];
+        
+        serviceResponse.errorMessageTitle = @"Server";
+        serviceResponse.errorMessage = [error localizedDescription];
+        serviceResponse.responseType = Failure;
+        blockSafeSelf.webResponse = serviceResponse;
       }
       else
       {

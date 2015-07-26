@@ -47,6 +47,7 @@
 		246BDE971B640390009623F1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE951B640390009623F1 /* FBSDKLoginKit.framework */; };
 		246BDED71B6487D4009623F1 /* T4Recommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDED61B6487D4009623F1 /* T4Recommendation.m */; };
 		246BDEDA1B6487D5009623F1 /* T4RecommendedItemPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDED91B6487D5009623F1 /* T4RecommendedItemPhoto.m */; };
+		246BDEDD1B6490F8009623F1 /* T4Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDEDC1B6490F8009623F1 /* T4Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,8 @@
 		246BDED61B6487D4009623F1 /* T4Recommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4Recommendation.m; sourceTree = "<group>"; };
 		246BDED81B6487D5009623F1 /* T4RecommendedItemPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4RecommendedItemPhoto.h; sourceTree = "<group>"; };
 		246BDED91B6487D5009623F1 /* T4RecommendedItemPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4RecommendedItemPhoto.m; sourceTree = "<group>"; };
+		246BDEDB1B6490F8009623F1 /* T4Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4Utility.h; sourceTree = "<group>"; };
+		246BDEDC1B6490F8009623F1 /* T4Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4Utility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +291,8 @@
 				246BDE4F1B6377CB009623F1 /* SCSettings.h */,
 				246BDE501B6377CB009623F1 /* SCSettings.m */,
 				246BDE601B638CB8009623F1 /* T4Constants.h */,
+				246BDEDB1B6490F8009623F1 /* T4Utility.h */,
+				246BDEDC1B6490F8009623F1 /* T4Utility.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 			files = (
 				246BDE091B636375009623F1 /* AppDelegate.m in Sources */,
 				246BDE7E1B63AC1E009623F1 /* T4Recommendation+Parsing.m in Sources */,
+				246BDEDD1B6490F8009623F1 /* T4Utility.m in Sources */,
 				246BDE0C1B636375009623F1 /* T4Recommendations.xcdatamodeld in Sources */,
 				246BDE651B63936E009623F1 /* T3RequestPackerController.m in Sources */,
 				246BDE891B63C302009623F1 /* T4APIRequestInfo.m in Sources */,

@@ -55,10 +55,14 @@
 - (void)viewDidLoad
 {
   
-    [super viewDidLoad];
-   self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
+  [super viewDidLoad];
+  self.navigationController.navigationBar.barTintColor  = UIColorFromRGB(kNavBarColor);
   self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
-
+  UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(50, 0, 100, 40)];
+  label.text = @"T4Rec";
+  label.textColor = [UIColor whiteColor];
+  label.font = [UIFont systemFontOfSize:15 weight:2];
+  self.navigationItem.titleView = label;
   self.view.backgroundColor = UIColorFromRGB(kBackgroundColor);
   SCSettings *settings = [SCSettings defaultSettings];
   settings.shouldSkipLogin = NO;
@@ -147,6 +151,7 @@
 }
 
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+  
     if (_viewIsVisible) {
         [self performSegueWithIdentifier:@"continue" sender:self];
     }
@@ -188,10 +193,12 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+
   if([FBSDKAccessToken currentAccessToken] == nil)
   {
     return NO;
   }
   return YES;
 }
+
 @end

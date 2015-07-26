@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../T4Recommendations/T4RecommendationListViewController.m"
-            timestampString = "459548965.657033"
+            timestampString = "459577052.575161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "-flip:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../T4Recommendations/ViewControllers/SCLoginViewController.m"
-            timestampString = "459543418.181665"
+            timestampString = "459577522.668919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../T4Recommendations/ViewControllers/SCLoginViewController.m"
-            timestampString = "459543418.181665"
+            timestampString = "459576074.074976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "-loginButton:didCompleteWithResult:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../T4Recommendations/WebUtilities/T4ResponseHandlerController.m"
-            timestampString = "459545255.928247"
+            timestampString = "459576537.36468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-completionBlockFromInitializer"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../T4Recommendations/WebUtilities/T4ResponseHandlerController.m"
-            timestampString = "459545255.928247"
+            timestampString = "459576537.36468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "-webResponseFromHttpResponse:"
             landmarkType = "5">
          </BreakpointContent>
@@ -105,28 +105,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../T4Recommendations/WebUtilities/T3RequestPackerController.m"
-            timestampString = "459538429.414237"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-urlRequestForURLString:withHTTPFieldValues:withBody:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../T4Recommendations/WebUtilities/T4ResponseHandlerController.m"
-            timestampString = "459545255.928247"
+            timestampString = "459576537.36468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "-webResponseFromHttpResponse:"
             landmarkType = "5">
          </BreakpointContent>
