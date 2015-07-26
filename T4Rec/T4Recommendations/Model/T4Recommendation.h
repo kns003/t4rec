@@ -2,7 +2,7 @@
 //  T4Recommendation.h
 //  T4Rec
 //
-//  Created by Radhakrishnan Selvaraj on 25/07/15.
+//  Created by Radhakrishnan Selvaraj on 26/07/15.
 //  Copyright (c) 2015 Dev Krishnan. All rights reserved.
 //
 
@@ -13,11 +13,19 @@
 
 @interface T4Recommendation : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * distance;
 @property (nonatomic, retain) NSString * category;
-@property (nonatomic, retain) NSString * entityID;
 @property (nonatomic, retain) NSString * details;
-@property (nonatomic, retain) T4RecommendedItemPhoto *hasPhotos;
+@property (nonatomic, retain) NSString * distance;
+@property (nonatomic, retain) NSString * entityID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSSet *hasPhotos;
+@end
+
+@interface T4Recommendation (CoreDataGeneratedAccessors)
+
+- (void)addHasPhotosObject:(T4RecommendedItemPhoto *)value;
+- (void)removeHasPhotosObject:(T4RecommendedItemPhoto *)value;
+- (void)addHasPhotos:(NSSet *)values;
+- (void)removeHasPhotos:(NSSet *)values;
 
 @end

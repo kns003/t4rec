@@ -7,6 +7,7 @@
 //
 
 #import "T4Recommendation+Parsing.h"
+#import "T4RecommendedItemPhoto.h"
 
 #define imagesKey  @"images"
 #define titleKey  @"title"
@@ -32,6 +33,14 @@
   recommendation.entityID = [contents objectForKey:pidKey];
   recommendation.details = [contents objectForKey:detailKey];
  
+  NSArray *imageURLS =  [contents objectForKey:imagesKey];
+  NSString* photoEntityName = NSStringFromClass([T4RecommendedItemPhoto class]);
+  for (NSString *url in imageURLS) {
+    
+    T4RecommendedItemPhoto *photo = [NSEntityDescription insertNewObjectForEntityForName:photoEntityName inManagedObjectContext:context];
+    photo.url = url;
+    photo.belongsToRecommendation = recommendation;
+  }
   
 }
 
@@ -42,6 +51,22 @@
   self.distance = [contents objectForKey:distanceKey];
   self.category = [contents objectForKey:categoryKey];
   self.details = [contents objectForKey:detailKey];
+  
+ 
+  for (NSManagedObject *managedObject in self.hasPhotos) {
+    [context deleteObject:managedObject];
+
+  }
+
+  NSArray *imageURLS =  [contents objectForKey:imagesKey];
+  NSString* photoEntityName = NSStringFromClass([T4RecommendedItemPhoto class]);
+  for (NSString *url in imageURLS) {
+    
+    T4RecommendedItemPhoto *photo = [NSEntityDescription insertNewObjectForEntityForName:photoEntityName inManagedObjectContext:context];
+    photo.url = url;
+    photo.belongsToRecommendation = self;
+  }
+
 }
 
 

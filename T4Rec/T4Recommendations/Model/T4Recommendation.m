@@ -2,7 +2,7 @@
 //  T4Recommendation.m
 //  T4Rec
 //
-//  Created by Radhakrishnan Selvaraj on 25/07/15.
+//  Created by Radhakrishnan Selvaraj on 26/07/15.
 //  Copyright (c) 2015 Dev Krishnan. All rights reserved.
 //
 
@@ -12,11 +12,11 @@
 
 @implementation T4Recommendation
 
-@dynamic name;
-@dynamic distance;
 @dynamic category;
-@dynamic entityID;
 @dynamic details;
+@dynamic distance;
+@dynamic entityID;
+@dynamic name;
 @dynamic hasPhotos;
 
 @end

@@ -6,7 +6,7 @@
         <attribute name="distance" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="entityID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="hasPhotos" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="T4RecommendedItemPhoto" inverseName="belongsToRecommendation" inverseEntity="T4RecommendedItemPhoto" syncable="YES"/>
+        <relationship name="hasPhotos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="T4RecommendedItemPhoto" inverseName="belongsToRecommendation" inverseEntity="T4RecommendedItemPhoto" syncable="YES"/>
     </entity>
     <entity name="T4RecommendedItemPhoto" representedClassName="T4RecommendedItemPhoto" syncable="YES">
         <attribute name="entityID" optional="YES" attributeType="String" syncable="YES"/>

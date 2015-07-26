@@ -205,6 +205,8 @@
   [gregorian components:(NSCalendarUnitMinute | NSCalendarUnitHour) fromDate:today];
   requestInfo.hour= [[NSString alloc]initWithFormat:@"%ld",(long)hourMin.hour]; ;
   requestInfo.minute= [[NSString alloc]initWithFormat:@"%ld",(long)hourMin.minute]; ;
+  requestInfo.hour= @"23";
+  requestInfo.minute= @"4" ;
   requestInfo.userID= accessToken.userID;
   requestInfo.accessToken = accessToken.tokenString;
   self.downLoadOperation = [[T4DownloadOperation alloc]initWithMode:Recommendations withDelegate:self withRequestInfo:requestInfo ];

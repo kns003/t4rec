@@ -66,7 +66,7 @@
       
 #ifdef SERVER_DEPLOYMENT_NOT_COMPLETE
        NSString* fileName = [[NSBundle mainBundle] pathForResource:@"Recommendation" ofType:@"txt"];
-        NSString* fileContents = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:NULL];
+      NSString* fileContents = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:NULL];
       string = fileContents;
       NSLog(@"string %@",string);
 #endif
