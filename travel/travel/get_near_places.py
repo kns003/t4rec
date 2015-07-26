@@ -1,7 +1,7 @@
 from googleplaces import GooglePlaces, types, lang
 from place import Place
 from type_fetcher import TypeFetcher
-import simplejson as json
+import json
 
 YOUR_API_KEY = 'AIzaSyCk8R2RvzH9AyeWYef4TCy0ag5nMEXvQBY'
 
