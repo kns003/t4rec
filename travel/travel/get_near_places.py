@@ -1,7 +1,7 @@
 from googleplaces import GooglePlaces, types, lang
 from place import Place
 from type_fetcher import TypeFetcher
-import json
+import simplejson as json
 
 YOUR_API_KEY = 'AIzaSyCk8R2RvzH9AyeWYef4TCy0ag5nMEXvQBY'
 
@@ -15,7 +15,7 @@ def get_poi(lat, lon, hour, minute, traits):
 	for query_type in query_types:
 		places = get_nearby_result(query_type[0], lat, lon, [query_type[1]])
 		if len(places) > 0:
-			return json.dumps(places, default=Place.to_json)
+			return json.dumps(places, default=Place.to_json).replace('\\', '')
 		else:
 			print "No results found"
 
