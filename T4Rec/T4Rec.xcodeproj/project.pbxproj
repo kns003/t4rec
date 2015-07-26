@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		246BDE061B636375009623F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE051B636375009623F1 /* main.m */; };
+		246BDE091B636375009623F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE081B636375009623F1 /* AppDelegate.m */; };
+		246BDE0C1B636375009623F1 /* T4Recommendations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE0A1B636375009623F1 /* T4Recommendations.xcdatamodeld */; };
+		246BDE0F1B636375009623F1 /* T4RecommendationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE0E1B636375009623F1 /* T4RecommendationListViewController.m */; };
+		246BDE121B636375009623F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 246BDE101B636375009623F1 /* Main.storyboard */; };
+		246BDE141B636375009623F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246BDE131B636375009623F1 /* Images.xcassets */; };
+		246BDE171B636375009623F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246BDE151B636375009623F1 /* LaunchScreen.xib */; };
+		246BDE231B636375009623F1 /* T4RecommendationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE221B636375009623F1 /* T4RecommendationsTests.m */; };
+		246BDE2D1B6371B3009623F1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE2C1B6371B3009623F1 /* FBSDKLoginKit.framework */; };
+		246BDE2F1B63721E009623F1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE2E1B63721E009623F1 /* FBSDKCoreKit.framework */; };
+		246BDE431B6374AC009623F1 /* LSCollectionViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE341B6374AC009623F1 /* LSCollectionViewHelper.m */; };
+		246BDE441B6374AC009623F1 /* LSCollectionViewLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE361B6374AC009623F1 /* LSCollectionViewLayoutHelper.m */; };
+		246BDE451B6374AC009623F1 /* UICollectionView+Draggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE381B6374AC009623F1 /* UICollectionView+Draggable.m */; };
+		246BDE461B6374AC009623F1 /* MTCardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE3C1B6374AC009623F1 /* MTCardLayout.m */; };
+		246BDE471B6374AC009623F1 /* MTCollectionViewCardLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE3E1B6374AC009623F1 /* MTCollectionViewCardLayoutHelper.m */; };
+		246BDE481B6374AC009623F1 /* MTDraggableCardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE401B6374AC009623F1 /* MTDraggableCardLayout.m */; };
+		246BDE491B6374AC009623F1 /* UICollectionView+CardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE421B6374AC009623F1 /* UICollectionView+CardLayout.m */; };
+		246BDE4D1B637772009623F1 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE4C1B637772009623F1 /* SCLoginViewController.m */; };
+		246BDE511B6377CB009623F1 /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE501B6377CB009623F1 /* SCSettings.m */; };
+		246BDE551B637A8D009623F1 /* T4RecommendationInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE541B637A8D009623F1 /* T4RecommendationInfoCell.m */; };
+		246BDE591B638A30009623F1 /* T4DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE581B638A30009623F1 /* T4DownloadOperation.m */; };
+		246BDE5D1B638ACC009623F1 /* T4DownloadOperationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE5C1B638ACC009623F1 /* T4DownloadOperationDelegate.swift */; };
+		246BDE651B63936E009623F1 /* T3RequestPackerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE641B63936E009623F1 /* T3RequestPackerController.m */; };
+		246BDE681B639397009623F1 /* T4ResponseHandlerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE671B639397009623F1 /* T4ResponseHandlerController.m */; };
+		246BDE6B1B639B2C009623F1 /* T4DataImportOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE6A1B639B2C009623F1 /* T4DataImportOperation.m */; };
+		246BDE6D1B639B79009623F1 /* T4DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE6C1B639B79009623F1 /* T4DataStore.swift */; };
+		246BDE6F1B639BAA009623F1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE6E1B639BAA009623F1 /* CoreData.framework */; };
+		246BDE741B63A9DF009623F1 /* T4WebResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE731B63A9DF009623F1 /* T4WebResponse.m */; };
+		246BDE781B63AC01009623F1 /* T4RecommendedItemPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE771B63AC01009623F1 /* T4RecommendedItemPhoto.m */; };
+		246BDE7B1B63AC02009623F1 /* T4Recommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE7A1B63AC02009623F1 /* T4Recommendation.m */; };
+		246BDE7E1B63AC1E009623F1 /* T4Recommendation+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE7D1B63AC1E009623F1 /* T4Recommendation+Parsing.m */; };
+		246BDE811B63AC31009623F1 /* T4RecommendedItemPhoto+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE801B63AC31009623F1 /* T4RecommendedItemPhoto+Parsing.m */; };
+		246BDE841B63AC85009623F1 /* Recommendation.txt in Resources */ = {isa = PBXBuildFile; fileRef = 246BDE831B63AC85009623F1 /* Recommendation.txt */; };
+		246BDE861B63B6E9009623F1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE851B63B6E9009623F1 /* CoreLocation.framework */; };
+		246BDE891B63C302009623F1 /* T4APIRequestInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE881B63C302009623F1 /* T4APIRequestInfo.m */; };
+		246BDE8B1B63DFAF009623F1 /* T4DataImportStatusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE8A1B63DFAF009623F1 /* T4DataImportStatusDelegate.swift */; };
+		246BDE921B63F80D009623F1 /* RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE8F1B63F80D009623F1 /* RNActivityView.m */; };
+		246BDE931B63F80D009623F1 /* UIView+RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 246BDE911B63F80D009623F1 /* UIView+RNActivityView.m */; };
+		246BDE961B640390009623F1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE941B640390009623F1 /* FBSDKCoreKit.framework */; };
+		246BDE971B640390009623F1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246BDE951B640390009623F1 /* FBSDKLoginKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		246BDE1D1B636375009623F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 246BDDF81B636375009623F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 246BDDFF1B636375009623F1;
+			remoteInfo = T4Recommendations;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		246BDE001B636375009623F1 /* T4Rec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T4Rec.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		246BDE041B636375009623F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		246BDE051B636375009623F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		246BDE071B636375009623F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		246BDE081B636375009623F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		246BDE0B1B636375009623F1 /* T4Recommendations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = T4Recommendations.xcdatamodel; sourceTree = "<group>"; };
+		246BDE0D1B636375009623F1 /* T4RecommendationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T4RecommendationListViewController.h; sourceTree = "<group>"; };
+		246BDE0E1B636375009623F1 /* T4RecommendationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T4RecommendationListViewController.m; sourceTree = "<group>"; };
+		246BDE111B636375009623F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		246BDE131B636375009623F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		246BDE161B636375009623F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		246BDE1C1B636375009623F1 /* T4RecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = T4RecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		246BDE211B636375009623F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		246BDE221B636375009623F1 /* T4RecommendationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T4RecommendationsTests.m; sourceTree = "<group>"; };
+		246BDE2C1B6371B3009623F1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		246BDE2E1B63721E009623F1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		246BDE331B6374AC009623F1 /* LSCollectionViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSCollectionViewHelper.h; sourceTree = "<group>"; };
+		246BDE341B6374AC009623F1 /* LSCollectionViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCollectionViewHelper.m; sourceTree = "<group>"; };
+		246BDE351B6374AC009623F1 /* LSCollectionViewLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSCollectionViewLayoutHelper.h; sourceTree = "<group>"; };
+		246BDE361B6374AC009623F1 /* LSCollectionViewLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCollectionViewLayoutHelper.m; sourceTree = "<group>"; };
+		246BDE371B6374AC009623F1 /* UICollectionView+Draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Draggable.h"; sourceTree = "<group>"; };
+		246BDE381B6374AC009623F1 /* UICollectionView+Draggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Draggable.m"; sourceTree = "<group>"; };
+		246BDE391B6374AC009623F1 /* UICollectionViewDataSource_Draggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewDataSource_Draggable.h; sourceTree = "<group>"; };
+		246BDE3A1B6374AC009623F1 /* UICollectionViewLayout_Warpable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLayout_Warpable.h; sourceTree = "<group>"; };
+		246BDE3B1B6374AC009623F1 /* MTCardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCardLayout.h; sourceTree = "<group>"; };
+		246BDE3C1B6374AC009623F1 /* MTCardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCardLayout.m; sourceTree = "<group>"; };
+		246BDE3D1B6374AC009623F1 /* MTCollectionViewCardLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCollectionViewCardLayoutHelper.h; sourceTree = "<group>"; };
+		246BDE3E1B6374AC009623F1 /* MTCollectionViewCardLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCollectionViewCardLayoutHelper.m; sourceTree = "<group>"; };
+		246BDE3F1B6374AC009623F1 /* MTDraggableCardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDraggableCardLayout.h; sourceTree = "<group>"; };
+		246BDE401B6374AC009623F1 /* MTDraggableCardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDraggableCardLayout.m; sourceTree = "<group>"; };
+		246BDE411B6374AC009623F1 /* UICollectionView+CardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CardLayout.h"; sourceTree = "<group>"; };
+		246BDE421B6374AC009623F1 /* UICollectionView+CardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CardLayout.m"; sourceTree = "<group>"; };
+		246BDE4B1B637772009623F1 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
+		246BDE4C1B637772009623F1 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
+		246BDE4F1B6377CB009623F1 /* SCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSettings.h; sourceTree = "<group>"; };
+		246BDE501B6377CB009623F1 /* SCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSettings.m; sourceTree = "<group>"; };
+		246BDE531B637A8D009623F1 /* T4RecommendationInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4RecommendationInfoCell.h; sourceTree = "<group>"; };
+		246BDE541B637A8D009623F1 /* T4RecommendationInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4RecommendationInfoCell.m; sourceTree = "<group>"; };
+		246BDE571B638A30009623F1 /* T4DownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4DownloadOperation.h; sourceTree = "<group>"; };
+		246BDE581B638A30009623F1 /* T4DownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4DownloadOperation.m; sourceTree = "<group>"; };
+		246BDE5B1B638ACC009623F1 /* T4Rec-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "T4Rec-Bridging-Header.h"; sourceTree = "<group>"; };
+		246BDE5C1B638ACC009623F1 /* T4DownloadOperationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T4DownloadOperationDelegate.swift; sourceTree = "<group>"; };
+		246BDE601B638CB8009623F1 /* T4Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T4Constants.h; sourceTree = "<group>"; };
+		246BDE631B63936E009623F1 /* T3RequestPackerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T3RequestPackerController.h; path = T4Recommendations/WebUtilities/T3RequestPackerController.h; sourceTree = SOURCE_ROOT; };
+		246BDE641B63936E009623F1 /* T3RequestPackerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T3RequestPackerController.m; path = T4Recommendations/WebUtilities/T3RequestPackerController.m; sourceTree = SOURCE_ROOT; };
+		246BDE661B639397009623F1 /* T4ResponseHandlerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = T4ResponseHandlerController.h; path = T4Recommendations/WebUtilities/T4ResponseHandlerController.h; sourceTree = SOURCE_ROOT; };
+		246BDE671B639397009623F1 /* T4ResponseHandlerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = T4ResponseHandlerController.m; path = T4Recommendations/WebUtilities/T4ResponseHandlerController.m; sourceTree = SOURCE_ROOT; };
+		246BDE691B639B2C009623F1 /* T4DataImportOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4DataImportOperation.h; sourceTree = "<group>"; };
+		246BDE6A1B639B2C009623F1 /* T4DataImportOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4DataImportOperation.m; sourceTree = "<group>"; };
+		246BDE6C1B639B79009623F1 /* T4DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = T4DataStore.swift; path = Stores/T4DataStore.swift; sourceTree = "<group>"; };
+		246BDE6E1B639BAA009623F1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		246BDE721B63A9DF009623F1 /* T4WebResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4WebResponse.h; sourceTree = "<group>"; };
+		246BDE731B63A9DF009623F1 /* T4WebResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4WebResponse.m; sourceTree = "<group>"; };
+		246BDE761B63AC01009623F1 /* T4RecommendedItemPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4RecommendedItemPhoto.h; sourceTree = "<group>"; };
+		246BDE771B63AC01009623F1 /* T4RecommendedItemPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4RecommendedItemPhoto.m; sourceTree = "<group>"; };
+		246BDE791B63AC02009623F1 /* T4Recommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4Recommendation.h; sourceTree = "<group>"; };
+		246BDE7A1B63AC02009623F1 /* T4Recommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4Recommendation.m; sourceTree = "<group>"; };
+		246BDE7C1B63AC1E009623F1 /* T4Recommendation+Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T4Recommendation+Parsing.h"; sourceTree = "<group>"; };
+		246BDE7D1B63AC1E009623F1 /* T4Recommendation+Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T4Recommendation+Parsing.m"; sourceTree = "<group>"; };
+		246BDE7F1B63AC31009623F1 /* T4RecommendedItemPhoto+Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T4RecommendedItemPhoto+Parsing.h"; sourceTree = "<group>"; };
+		246BDE801B63AC31009623F1 /* T4RecommendedItemPhoto+Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T4RecommendedItemPhoto+Parsing.m"; sourceTree = "<group>"; };
+		246BDE831B63AC85009623F1 /* Recommendation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Recommendation.txt; sourceTree = "<group>"; };
+		246BDE851B63B6E9009623F1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		246BDE871B63C302009623F1 /* T4APIRequestInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T4APIRequestInfo.h; sourceTree = "<group>"; };
+		246BDE881B63C302009623F1 /* T4APIRequestInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T4APIRequestInfo.m; sourceTree = "<group>"; };
+		246BDE8A1B63DFAF009623F1 /* T4DataImportStatusDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T4DataImportStatusDelegate.swift; sourceTree = "<group>"; };
+		246BDE8E1B63F80D009623F1 /* RNActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNActivityView.h; sourceTree = "<group>"; };
+		246BDE8F1B63F80D009623F1 /* RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityView.m; sourceTree = "<group>"; };
+		246BDE901B63F80D009623F1 /* UIView+RNActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RNActivityView.h"; sourceTree = "<group>"; };
+		246BDE911B63F80D009623F1 /* UIView+RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RNActivityView.m"; sourceTree = "<group>"; };
+		246BDE941B640390009623F1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "T4Recommendations/External-Libraries/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		246BDE951B640390009623F1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "T4Recommendations/External-Libraries/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		246BDDFD1B636375009623F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				246BDE961B640390009623F1 /* FBSDKCoreKit.framework in Frameworks */,
+				246BDE971B640390009623F1 /* FBSDKLoginKit.framework in Frameworks */,
+				246BDE861B63B6E9009623F1 /* CoreLocation.framework in Frameworks */,
+				246BDE6F1B639BAA009623F1 /* CoreData.framework in Frameworks */,
+				246BDE2F1B63721E009623F1 /* FBSDKCoreKit.framework in Frameworks */,
+				246BDE2D1B6371B3009623F1 /* FBSDKLoginKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		246BDE191B636375009623F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		246BDDF71B636375009623F1 = {
+			isa = PBXGroup;
+			children = (
+				246BDE941B640390009623F1 /* FBSDKCoreKit.framework */,
+				246BDE951B640390009623F1 /* FBSDKLoginKit.framework */,
+				246BDE851B63B6E9009623F1 /* CoreLocation.framework */,
+				246BDE6E1B639BAA009623F1 /* CoreData.framework */,
+				246BDE2E1B63721E009623F1 /* FBSDKCoreKit.framework */,
+				246BDE2C1B6371B3009623F1 /* FBSDKLoginKit.framework */,
+				246BDE021B636375009623F1 /* T4Recommendations */,
+				246BDE1F1B636375009623F1 /* T4RecommendationsTests */,
+				246BDE011B636375009623F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		246BDE011B636375009623F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE001B636375009623F1 /* T4Rec.app */,
+				246BDE1C1B636375009623F1 /* T4RecTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		246BDE021B636375009623F1 /* T4Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE8C1B63F80D009623F1 /* External-Libraries */,
+				246BDE821B63AC85009623F1 /* Seed Data */,
+				246BDE751B63ABDE009623F1 /* Model */,
+				246BDE5A1B638AAF009623F1 /* Protocols */,
+				246BDE561B638A19009623F1 /* Operations */,
+				246BDE521B637A8D009623F1 /* CustomViews */,
+				246BDE4E1B6377CB009623F1 /* Utilities */,
+				246BDE4A1B637772009623F1 /* ViewControllers */,
+				246BDE301B6374AC009623F1 /* MTCardLayout */,
+				246BDE071B636375009623F1 /* AppDelegate.h */,
+				246BDE081B636375009623F1 /* AppDelegate.m */,
+				246BDE0D1B636375009623F1 /* T4RecommendationListViewController.h */,
+				246BDE0E1B636375009623F1 /* T4RecommendationListViewController.m */,
+				246BDE101B636375009623F1 /* Main.storyboard */,
+				246BDE131B636375009623F1 /* Images.xcassets */,
+				246BDE151B636375009623F1 /* LaunchScreen.xib */,
+				246BDE0A1B636375009623F1 /* T4Recommendations.xcdatamodeld */,
+				246BDE031B636375009623F1 /* Supporting Files */,
+				246BDE6C1B639B79009623F1 /* T4DataStore.swift */,
+			);
+			path = T4Recommendations;
+			sourceTree = "<group>";
+		};
+		246BDE031B636375009623F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE041B636375009623F1 /* Info.plist */,
+				246BDE051B636375009623F1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		246BDE1F1B636375009623F1 /* T4RecommendationsTests */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE221B636375009623F1 /* T4RecommendationsTests.m */,
+				246BDE201B636375009623F1 /* Supporting Files */,
+			);
+			path = T4RecommendationsTests;
+			sourceTree = "<group>";
+		};
+		246BDE201B636375009623F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE211B636375009623F1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		246BDE301B6374AC009623F1 /* MTCardLayout */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE311B6374AC009623F1 /* DraggableCollectionView */,
+				246BDE3B1B6374AC009623F1 /* MTCardLayout.h */,
+				246BDE3C1B6374AC009623F1 /* MTCardLayout.m */,
+				246BDE3D1B6374AC009623F1 /* MTCollectionViewCardLayoutHelper.h */,
+				246BDE3E1B6374AC009623F1 /* MTCollectionViewCardLayoutHelper.m */,
+				246BDE3F1B6374AC009623F1 /* MTDraggableCardLayout.h */,
+				246BDE401B6374AC009623F1 /* MTDraggableCardLayout.m */,
+				246BDE411B6374AC009623F1 /* UICollectionView+CardLayout.h */,
+				246BDE421B6374AC009623F1 /* UICollectionView+CardLayout.m */,
+			);
+			path = MTCardLayout;
+			sourceTree = "<group>";
+		};
+		246BDE311B6374AC009623F1 /* DraggableCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE321B6374AC009623F1 /* Helpers */,
+				246BDE371B6374AC009623F1 /* UICollectionView+Draggable.h */,
+				246BDE381B6374AC009623F1 /* UICollectionView+Draggable.m */,
+				246BDE391B6374AC009623F1 /* UICollectionViewDataSource_Draggable.h */,
+				246BDE3A1B6374AC009623F1 /* UICollectionViewLayout_Warpable.h */,
+			);
+			path = DraggableCollectionView;
+			sourceTree = "<group>";
+		};
+		246BDE321B6374AC009623F1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE331B6374AC009623F1 /* LSCollectionViewHelper.h */,
+				246BDE341B6374AC009623F1 /* LSCollectionViewHelper.m */,
+				246BDE351B6374AC009623F1 /* LSCollectionViewLayoutHelper.h */,
+				246BDE361B6374AC009623F1 /* LSCollectionViewLayoutHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		246BDE4A1B637772009623F1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE4B1B637772009623F1 /* SCLoginViewController.h */,
+				246BDE4C1B637772009623F1 /* SCLoginViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		246BDE4E1B6377CB009623F1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE4F1B6377CB009623F1 /* SCSettings.h */,
+				246BDE501B6377CB009623F1 /* SCSettings.m */,
+				246BDE601B638CB8009623F1 /* T4Constants.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		246BDE521B637A8D009623F1 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE531B637A8D009623F1 /* T4RecommendationInfoCell.h */,
+				246BDE541B637A8D009623F1 /* T4RecommendationInfoCell.m */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		246BDE561B638A19009623F1 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE571B638A30009623F1 /* T4DownloadOperation.h */,
+				246BDE581B638A30009623F1 /* T4DownloadOperation.m */,
+				246BDE631B63936E009623F1 /* T3RequestPackerController.h */,
+				246BDE641B63936E009623F1 /* T3RequestPackerController.m */,
+				246BDE661B639397009623F1 /* T4ResponseHandlerController.h */,
+				246BDE671B639397009623F1 /* T4ResponseHandlerController.m */,
+				246BDE691B639B2C009623F1 /* T4DataImportOperation.h */,
+				246BDE6A1B639B2C009623F1 /* T4DataImportOperation.m */,
+				246BDE721B63A9DF009623F1 /* T4WebResponse.h */,
+				246BDE731B63A9DF009623F1 /* T4WebResponse.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		246BDE5A1B638AAF009623F1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE5C1B638ACC009623F1 /* T4DownloadOperationDelegate.swift */,
+				246BDE5B1B638ACC009623F1 /* T4Rec-Bridging-Header.h */,
+				246BDE8A1B63DFAF009623F1 /* T4DataImportStatusDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		246BDE751B63ABDE009623F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE791B63AC02009623F1 /* T4Recommendation.h */,
+				246BDE7A1B63AC02009623F1 /* T4Recommendation.m */,
+				246BDE761B63AC01009623F1 /* T4RecommendedItemPhoto.h */,
+				246BDE771B63AC01009623F1 /* T4RecommendedItemPhoto.m */,
+				246BDE7C1B63AC1E009623F1 /* T4Recommendation+Parsing.h */,
+				246BDE7D1B63AC1E009623F1 /* T4Recommendation+Parsing.m */,
+				246BDE7F1B63AC31009623F1 /* T4RecommendedItemPhoto+Parsing.h */,
+				246BDE801B63AC31009623F1 /* T4RecommendedItemPhoto+Parsing.m */,
+				246BDE871B63C302009623F1 /* T4APIRequestInfo.h */,
+				246BDE881B63C302009623F1 /* T4APIRequestInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		246BDE821B63AC85009623F1 /* Seed Data */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE831B63AC85009623F1 /* Recommendation.txt */,
+			);
+			path = "Seed Data";
+			sourceTree = "<group>";
+		};
+		246BDE8C1B63F80D009623F1 /* External-Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE8D1B63F80D009623F1 /* RNActivityView */,
+			);
+			path = "External-Libraries";
+			sourceTree = "<group>";
+		};
+		246BDE8D1B63F80D009623F1 /* RNActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				246BDE8E1B63F80D009623F1 /* RNActivityView.h */,
+				246BDE8F1B63F80D009623F1 /* RNActivityView.m */,
+				246BDE901B63F80D009623F1 /* UIView+RNActivityView.h */,
+				246BDE911B63F80D009623F1 /* UIView+RNActivityView.m */,
+			);
+			path = RNActivityView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		246BDDFF1B636375009623F1 /* T4Rec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 246BDE261B636375009623F1 /* Build configuration list for PBXNativeTarget "T4Rec" */;
+			buildPhases = (
+				246BDDFC1B636375009623F1 /* Sources */,
+				246BDDFD1B636375009623F1 /* Frameworks */,
+				246BDDFE1B636375009623F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = T4Rec;
+			productName = T4Recommendations;
+			productReference = 246BDE001B636375009623F1 /* T4Rec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		246BDE1B1B636375009623F1 /* T4RecTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 246BDE291B636375009623F1 /* Build configuration list for PBXNativeTarget "T4RecTests" */;
+			buildPhases = (
+				246BDE181B636375009623F1 /* Sources */,
+				246BDE191B636375009623F1 /* Frameworks */,
+				246BDE1A1B636375009623F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				246BDE1E1B636375009623F1 /* PBXTargetDependency */,
+			);
+			name = T4RecTests;
+			productName = T4RecommendationsTests;
+			productReference = 246BDE1C1B636375009623F1 /* T4RecTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		246BDDF81B636375009623F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Dev Krishnan";
+				TargetAttributes = {
+					246BDDFF1B636375009623F1 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					246BDE1B1B636375009623F1 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 246BDDFF1B636375009623F1;
+					};
+				};
+			};
+			buildConfigurationList = 246BDDFB1B636375009623F1 /* Build configuration list for PBXProject "T4Rec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 246BDDF71B636375009623F1;
+			productRefGroup = 246BDE011B636375009623F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				246BDDFF1B636375009623F1 /* T4Rec */,
+				246BDE1B1B636375009623F1 /* T4RecTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		246BDDFE1B636375009623F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				246BDE121B636375009623F1 /* Main.storyboard in Resources */,
+				246BDE841B63AC85009623F1 /* Recommendation.txt in Resources */,
+				246BDE171B636375009623F1 /* LaunchScreen.xib in Resources */,
+				246BDE141B636375009623F1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		246BDE1A1B636375009623F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		246BDDFC1B636375009623F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				246BDE091B636375009623F1 /* AppDelegate.m in Sources */,
+				246BDE7E1B63AC1E009623F1 /* T4Recommendation+Parsing.m in Sources */,
+				246BDE0C1B636375009623F1 /* T4Recommendations.xcdatamodeld in Sources */,
+				246BDE651B63936E009623F1 /* T3RequestPackerController.m in Sources */,
+				246BDE891B63C302009623F1 /* T4APIRequestInfo.m in Sources */,
+				246BDE681B639397009623F1 /* T4ResponseHandlerController.m in Sources */,
+				246BDE461B6374AC009623F1 /* MTCardLayout.m in Sources */,
+				246BDE0F1B636375009623F1 /* T4RecommendationListViewController.m in Sources */,
+				246BDE8B1B63DFAF009623F1 /* T4DataImportStatusDelegate.swift in Sources */,
+				246BDE491B6374AC009623F1 /* UICollectionView+CardLayout.m in Sources */,
+				246BDE441B6374AC009623F1 /* LSCollectionViewLayoutHelper.m in Sources */,
+				246BDE061B636375009623F1 /* main.m in Sources */,
+				246BDE511B6377CB009623F1 /* SCSettings.m in Sources */,
+				246BDE6D1B639B79009623F1 /* T4DataStore.swift in Sources */,
+				246BDE5D1B638ACC009623F1 /* T4DownloadOperationDelegate.swift in Sources */,
+				246BDE921B63F80D009623F1 /* RNActivityView.m in Sources */,
+				246BDE481B6374AC009623F1 /* MTDraggableCardLayout.m in Sources */,
+				246BDE811B63AC31009623F1 /* T4RecommendedItemPhoto+Parsing.m in Sources */,
+				246BDE4D1B637772009623F1 /* SCLoginViewController.m in Sources */,
+				246BDE551B637A8D009623F1 /* T4RecommendationInfoCell.m in Sources */,
+				246BDE591B638A30009623F1 /* T4DownloadOperation.m in Sources */,
+				246BDE741B63A9DF009623F1 /* T4WebResponse.m in Sources */,
+				246BDE931B63F80D009623F1 /* UIView+RNActivityView.m in Sources */,
+				246BDE431B6374AC009623F1 /* LSCollectionViewHelper.m in Sources */,
+				246BDE451B6374AC009623F1 /* UICollectionView+Draggable.m in Sources */,
+				246BDE6B1B639B2C009623F1 /* T4DataImportOperation.m in Sources */,
+				246BDE471B6374AC009623F1 /* MTCollectionViewCardLayoutHelper.m in Sources */,
+				246BDE7B1B63AC02009623F1 /* T4Recommendation.m in Sources */,
+				246BDE781B63AC01009623F1 /* T4RecommendedItemPhoto.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		246BDE181B636375009623F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				246BDE231B636375009623F1 /* T4RecommendationsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		246BDE1E1B636375009623F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 246BDDFF1B636375009623F1 /* T4Rec */;
+			targetProxy = 246BDE1D1B636375009623F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		246BDE101B636375009623F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				246BDE111B636375009623F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		246BDE151B636375009623F1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				246BDE161B636375009623F1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		246BDE241B636375009623F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = T4Rec;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		246BDE251B636375009623F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = T4Rec;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		246BDE271B636375009623F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/radhakrishnanselvaraj,
+					1/Development/Me,
+					playing,
+					with,
+					SDK/Hackathon/FacebookSDK,
+					"$(PROJECT_DIR)/T4Recommendations/External-Libraries",
+				);
+				INFOPLIST_FILE = T4Recommendations/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = T4Rec;
+				SWIFT_OBJC_BRIDGING_HEADER = "T4Recommendations/Protocols/T4Rec-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		246BDE281B636375009623F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/radhakrishnanselvaraj,
+					1/Development/Me,
+					playing,
+					with,
+					SDK/Hackathon/FacebookSDK,
+					"$(PROJECT_DIR)/T4Recommendations/External-Libraries",
+				);
+				INFOPLIST_FILE = T4Recommendations/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = T4Rec;
+				SWIFT_OBJC_BRIDGING_HEADER = "T4Recommendations/Protocols/T4Rec-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		246BDE2A1B636375009623F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = T4RecommendationsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = T4RecTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T4Recommendations.app/T4Recommendations";
+			};
+			name = Debug;
+		};
+		246BDE2B1B636375009623F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = T4RecommendationsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = T4RecTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T4Recommendations.app/T4Recommendations";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		246BDDFB1B636375009623F1 /* Build configuration list for PBXProject "T4Rec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				246BDE241B636375009623F1 /* Debug */,
+				246BDE251B636375009623F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		246BDE261B636375009623F1 /* Build configuration list for PBXNativeTarget "T4Rec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				246BDE271B636375009623F1 /* Debug */,
+				246BDE281B636375009623F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		246BDE291B636375009623F1 /* Build configuration list for PBXNativeTarget "T4RecTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				246BDE2A1B636375009623F1 /* Debug */,
+				246BDE2B1B636375009623F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		246BDE0A1B636375009623F1 /* T4Recommendations.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				246BDE0B1B636375009623F1 /* T4Recommendations.xcdatamodel */,
+			);
+			currentVersion = 246BDE0B1B636375009623F1 /* T4Recommendations.xcdatamodel */;
+			path = T4Recommendations.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 246BDDF81B636375009623F1 /* Project object */;
+}

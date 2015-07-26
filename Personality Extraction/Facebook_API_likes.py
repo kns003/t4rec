@@ -3,13 +3,13 @@ import json
 import urllib2
 
 likes = []
-token = 'CAACEdEose0cBAM0CzqZANY2J8yiwhIMNP9mslm5JUePrvJhqJiNLedmWHre7t71yCMfJVofZCmgi8Vlumg4YspNUzviLsnuFZCZBi2pUeY97zsRB68YFUqVCsTVktabf5AT3X7WZCairbg8prHyVu7GDIIBKjqrCiPqIA9ZCeny0brBeIAuaGZAPlDXqFm0rh3cEG1p3DzPdZAJDz9IqNp3v'
+token = 'CAACEdEose0cBABlMPvluxIx9JIxKTafsnwZACr4VjFwgsR6kQGiHbrsZAsy7Ve59X95Ik6B5HK8gIGGFXtYBr6IZCswyPHVnneb9snQs1JsbrZAN5ZAhte3zSSZBbcrHMuYYR7wNvXMiqte72IbN5SK7HFuZBMVJusyfMZAv7QrccLZBZBauBmpBVJewWPplaQPtJ52aibRWeWfAZANidnypxSZB'
 graph =  facebook.GraphAPI(access_token=token)#, version='2.4')
 profile = graph.get_object("me")
 likes.append(profile['quotes'].encode('utf8'))
 def likes_gather(str, args):
     profile = graph.get_object('me', **args)
-    #print profile
+    # print profile
     for x in profile[str]['data']:
         likes.append(x['name'].encode('utf8'))
     try:
