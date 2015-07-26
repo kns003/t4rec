@@ -116,7 +116,7 @@
   T4Recommendation *recommendationInfo = self.items[indexPath.item];
   
   cell.titleLabel.text = recommendationInfo.name;
-  NSUInteger random = arc4random_uniform((recommendationInfo.name.length*1000));
+  NSUInteger random = arc4random_uniform(((NSUInteger)recommendationInfo.name.length*100));
   cell.distanceLabel.text = [[NSString alloc]initWithFormat:@"%lu metres away",(unsigned long)random];
   cell.detailsLabel.text = recommendationInfo.details;
   return cell;
